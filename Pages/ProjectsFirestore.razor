@@ -1,0 +1,31 @@
+@page "/projects_firestore"
+@using Firebase.Realtime.BlazorServer.Example.Data
+@using Firebase.Realtime.BlazorServer.Example.DataAccess
+@inject ProjectDataAccessLayer _projectDataAccessLayer;
+
+<PageTitle>Projects</PageTitle>
+
+<div class="projects">
+    @foreach (var project in _projects)
+    {
+        <div class="project">
+            @if (!string.IsNullOrWhiteSpace(project.Url))
+            {
+                <img class="project-image" src=@project.Url alt=@project.Name />
+            }
+            <h1>@project.Name</h1>
+            <p>@project.Description</p>
+            <p>Creation @project.Creation</p>
+        </div>
+    }
+</div>
+
+@code {
+
+    private List<FirestoreProjectDto> _projects = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _projects = await _projectDataAccessLayer.GetAllAsync();
+    }
+}

@@ -6,10 +6,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1c4a4a7-f11f-4cf0-8dfd-89e8d9917607" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Data/FirestoreProjectDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/ProjectDataAccessLayer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pages/Project.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pages/ProjectsFirestore.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frozensoft-software-2ef84-firebase-adminsdk-t8gby-014540d401.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Firebase.Realtime.BlazorServer.Example.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Firebase.Realtime.BlazorServer.Example.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Project.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Project.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Project.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/ProjectDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Firebase.Realtime.BlazorServer.Example.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Firebase.Realtime.BlazorServer.Example.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/Projects.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Projects.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.Development.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,11 +27,15 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="27N2FC4ECigByxtsJYbFzKuaUQ9" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -71,7 +82,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1649146117072</updated>
-      <workItem from="1649146123780" duration="3231000" />
+      <workItem from="1649146123780" duration="6540000" />
+      <workItem from="1649156261474" duration="662000" />
     </task>
     <servers />
   </component>
@@ -79,9 +91,21 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
 </project>

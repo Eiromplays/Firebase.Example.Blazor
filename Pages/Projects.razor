@@ -2,6 +2,7 @@
 @using Firebase.Database
 @using Firebase.Database.Streaming
 @using Firebase.Realtime.BlazorServer.Example.Data
+@inject FirebaseClient _firebase;
 
 <PageTitle>Projects</PageTitle>
 
@@ -21,19 +22,17 @@
 
 @code {
 
-    private readonly Dictionary<string, Project> _projects = new();
+    private readonly Dictionary<string, ProjectDto> _projects = new();
 
     protected override async Task OnInitializedAsync()
     {
-        var firebase = new FirebaseClient("https://frozensoft-software-2ef84-default-rtdb.europe-west1.firebasedatabase.app/");
-    
-        firebase
+        _firebase
             .Child("projects")
-            .AsObservable<Project>()
+            .AsObservable<ProjectDto>()
             .Subscribe(OnProjectsChanged);
     }
     
-    private void OnProjectsChanged(FirebaseEvent<Project> projectEvent)
+    private void OnProjectsChanged(FirebaseEvent<ProjectDto> projectEvent)
     {
         switch (projectEvent.EventType)
         {
@@ -56,5 +55,5 @@
             _projects.Remove(key);
     }
     
-    private void AddProject(FirebaseObject<Project> project) => _projects[project.Key] = project.Object;
+    private void AddProject(FirebaseObject<ProjectDto> project) => _projects[project.Key] = project.Object;
 }

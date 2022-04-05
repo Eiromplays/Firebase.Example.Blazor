@@ -1,4 +1,6 @@
+using Firebase.Database;
 using Firebase.Realtime.BlazorServer.Example.Data;
+using Firebase.Realtime.BlazorServer.Example.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddSingleton(new ProjectDataAccessLayer(builder.Configuration));
+builder.Services.AddSingleton(new FirebaseClient("https://frozensoft-software-2ef84-default-rtdb.europe-west1.firebasedatabase.app/"));
 
 var app = builder.Build();
 
