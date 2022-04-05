@@ -1,18 +1,27 @@
 @page "/projects"
-@using Firebase.Realtime.Blazor.Example.Models
 @using Firebase.Database
+@using Firebase.Database.Streaming
+@using Firebase.Realtime.BlazorServer.Example.Data
 
 <PageTitle>Projects</PageTitle>
 
-@foreach (var project in _projects)
-{
-    <h1>@project.Object.Name</h1>
-    <p>@project.Object.Description</p>
-}
+<div class="projects">
+    @foreach (var (_, project) in _projects)
+    {
+        <div class="project">
+            @if (!string.IsNullOrWhiteSpace(project.Url))
+            {
+                <img class="project-image" src=@project.Url alt=@project.Name />
+            }
+            <h1>@project.Name</h1>
+            <p>@project.Description</p>
+        </div>
+    }
+</div>
 
 @code {
 
-    private List<FirebaseObject<Project>> _projects = new();
+    private readonly Dictionary<string, Project> _projects = new();
 
     protected override async Task OnInitializedAsync()
     {
@@ -21,15 +30,31 @@
         firebase
             .Child("projects")
             .AsObservable<Project>()
-            .Subscribe(AddProject);
+            .Subscribe(OnProjectsChanged);
     }
-
-    private void AddProject(FirebaseObject<Project> project)
+    
+    private void OnProjectsChanged(FirebaseEvent<Project> projectEvent)
     {
-        if (_projects.FirstOrDefault(x => x.Key != project.Key) is null)
+        switch (projectEvent.EventType)
         {
-            _projects.Add(project);
+            case FirebaseEventType.Delete:
+                RemoveProject(projectEvent.Key);
+                break;
+            case FirebaseEventType.InsertOrUpdate:
+                AddProject(projectEvent); 
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
         
+        InvokeAsync(StateHasChanged);
     }
+
+    private void RemoveProject(string key)
+    {
+        if (_projects.ContainsKey(key))
+            _projects.Remove(key);
+    }
+    
+    private void AddProject(FirebaseObject<Project> project) => _projects[project.Key] = project.Object;
 }

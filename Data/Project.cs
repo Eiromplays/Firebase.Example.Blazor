@@ -1,4 +1,4 @@
-﻿namespace Firebase.Realtime.Blazor.Example.Models;
+﻿namespace Firebase.Realtime.BlazorServer.Example.Data;
 
 public class Project
 {
