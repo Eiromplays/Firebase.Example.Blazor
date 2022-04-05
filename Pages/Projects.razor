@@ -1,0 +1,35 @@
+@page "/projects"
+@using Firebase.Realtime.Blazor.Example.Models
+@using Firebase.Database
+
+<PageTitle>Projects</PageTitle>
+
+@foreach (var project in _projects)
+{
+    <h1>@project.Object.Name</h1>
+    <p>@project.Object.Description</p>
+}
+
+@code {
+
+    private List<FirebaseObject<Project>> _projects = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var firebase = new FirebaseClient("https://frozensoft-software-2ef84-default-rtdb.europe-west1.firebasedatabase.app/");
+    
+        firebase
+            .Child("projects")
+            .AsObservable<Project>()
+            .Subscribe(AddProject);
+    }
+
+    private void AddProject(FirebaseObject<Project> project)
+    {
+        if (_projects.FirstOrDefault(x => x.Key != project.Key) is null)
+        {
+            _projects.Add(project);
+        }
+        
+    }
+}

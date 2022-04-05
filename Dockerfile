@@ -5,16 +5,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["Firebase.Realtime.Blazor.Example.csproj", "./"]
-RUN dotnet restore "Firebase.Realtime.Blazor.Example.csproj"
+COPY ["Firebase.Realtime.BlazorServer.Example/Firebase.Realtime.BlazorServer.Example.csproj", "Firebase.Realtime.BlazorServer.Example/"]
+RUN dotnet restore "Firebase.Realtime.BlazorServer.Example/Firebase.Realtime.BlazorServer.Example.csproj"
 COPY . .
-WORKDIR "/src/"
-RUN dotnet build "Firebase.Realtime.Blazor.Example.csproj" -c Release -o /app/build
+WORKDIR "/src/Firebase.Realtime.BlazorServer.Example"
+RUN dotnet build "Firebase.Realtime.BlazorServer.Example.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Firebase.Realtime.Blazor.Example.csproj" -c Release -o /app/publish
+RUN dotnet publish "Firebase.Realtime.BlazorServer.Example.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Firebase.Realtime.Blazor.Example.dll"]
+ENTRYPOINT ["dotnet", "Firebase.Realtime.BlazorServer.Example.dll"]
