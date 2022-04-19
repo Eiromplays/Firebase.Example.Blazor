@@ -6,9 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1c4a4a7-f11f-4cf0-8dfd-89e8d9917607" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Firebase.Realtime.BlazorServer.Example.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Firebase.Realtime.BlazorServer.Example.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/Project.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Project.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/Project.razor" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.Development.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +78,7 @@
       <updated>1649146117072</updated>
       <workItem from="1649146123780" duration="6540000" />
       <workItem from="1649156261474" duration="2476000" />
-      <workItem from="1650349688113" duration="2351000" />
+      <workItem from="1650349688113" duration="2939000" />
     </task>
     <servers />
   </component>
