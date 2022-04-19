@@ -7,11 +7,21 @@
   <component name="ChangeListManager">
     <list default="true" id="a1c4a4a7-f11f-4cf0-8dfd-89e8d9917607" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Firebase.Realtime.BlazorServer.Example.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Firebase.Realtime.BlazorServer.Example.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/Counter.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/FetchData.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/Projects.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Projects.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProjectsFirestore.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/ProjectsFirestore.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/NavMenu.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/SurveyPrompt.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.Development.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8f2d2070c17159da1639319949e582b2c0f6f2f6da981cc6521f8c1e7d52aa/NavLinkMatch.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -73,7 +83,8 @@
       <option name="presentableId" value="Default" />
       <updated>1649146117072</updated>
       <workItem from="1649146123780" duration="6540000" />
-      <workItem from="1649156261474" duration="2142000" />
+      <workItem from="1649156261474" duration="2476000" />
+      <workItem from="1650349688113" duration="759000" />
     </task>
     <servers />
   </component>

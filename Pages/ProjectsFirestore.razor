@@ -3,15 +3,15 @@
 @using Firebase.Realtime.BlazorServer.Example.DataAccess
 @inject ProjectDataAccessLayer _projectDataAccessLayer;
 
-<PageTitle>Projects</PageTitle>
+<PageTitle>Projects Firestore</PageTitle>
 
 <div class="projects">
     @foreach (var project in _projects)
     {
         <div class="project">
-            @if (!string.IsNullOrWhiteSpace(project.Url))
+            @if (!string.IsNullOrWhiteSpace(project.ImageUrl))
             {
-                <img class="project-image" src=@project.Url alt=@project.Name />
+                <img class="project-image" src=@project.ImageUrl alt=@project.Name/>
             }
             <h1>@project.Name</h1>
             <p>@project.Description</p>

@@ -24,12 +24,14 @@
 
     private readonly Dictionary<string, ProjectDto> _projects = new();
 
-    protected override async Task OnInitializedAsync()
+    protected override Task OnInitializedAsync()
     {
         _firebase
             .Child("projects")
             .AsObservable<ProjectDto>()
             .Subscribe(OnProjectsChanged);
+        
+        return Task.CompletedTask;
     }
     
     private void OnProjectsChanged(FirebaseEvent<ProjectDto> projectEvent)
